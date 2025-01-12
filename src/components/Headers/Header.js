@@ -75,7 +75,7 @@ function Header() {
   const LogoIcon = isAcademicServicesPage ? FaBook : GiLion;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white ">
       <nav className="container mx-auto px-4 lg:px-16">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2 text-2xl font-bold text-gray-800">
@@ -93,7 +93,7 @@ function Header() {
           </button>
 
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            <Link to="/" className={`text-gray-600 hover:text-primary transition-colors ${isActive('/') ? 'text-primary font-bold' : ''}`}>
+            <Link to="/" className={`text-gray-600 hover:text-primary  transition-colors ${isActive('/') ? 'text-primary font-bold' : ''}`}>
               Home
             </Link>
 

@@ -69,7 +69,7 @@ const AcademicServices = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Subject Areas We Cover</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <SubjectCard title="Computer Science" topics={["Programming", "Algorithms", "Database Design"]} />
+            <SubjectCard title="Computer Science" topics={["Programming", "UI/UX", "Research"]} />
             <SubjectCard title="Engineering" topics={["Mechanical", "Electrical", "Civil"]} />
             <SubjectCard title="Business" topics={["Management", "Marketing", "Finance"]} />
             <SubjectCard title="Science" topics={["Physics", "Chemistry", "Biology"]} />
@@ -142,33 +142,33 @@ const AcademicServices = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <PriceCard
               title="Basic"
-              price="Starting at $50"
+              price="Starting at $75"
               features={[
                 "Basic Project Reports",
                 "Standard Documentation",
                 "Email Support",
-                "3-Day Delivery"
+                "3-Weeks Delivery"
               ]}
             />
             <PriceCard
               title="Standard"
-              price="Starting at $100"
+              price="Starting at $200"
               features={[
                 "Detailed Project Reports",
                 "Research Documentation",
                 "Priority Support",
-                "2-Day Delivery"
+                "1-Week Delivery"
               ]}
               highlighted={true}
             />
             <PriceCard
               title="Premium"
-              price="Starting at $200"
+              price="Starting at $300"
               features={[
                 "Complex Project Reports",
                 "Advanced Research",
                 "24/7 Support",
-                "1-Day Delivery"
+                "3-Day Delivery"
               ]}
             />
           </div>
@@ -219,12 +219,12 @@ const FeatureCard = ({ icon, title, description }) => (
 );
 
 const PriceCard = ({ title, price, features, highlighted = false }) => (
-  <div className={`p-6 rounded-lg ${highlighted ? 'bg-green-50 shadow-xl' : 'bg-white shadow-lg'}`}>
+  <div className={`p-6 rounded-lg ${highlighted ? 'bg-green-50 shadow-xl font-bold ' : 'bg-white shadow-lg'}`}>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-2xl font-bold text-green-600 mb-6">{price}</p>
     <ul className="space-y-3 mb-6">
       {features.map((feature, index) => (
-        <li key={index} className="flex items-center text-gray-600">
+        <li key={index} className="flex items-center text-gray-600 text-3xl font-extrabold">
           <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
           {feature}
         </li>

@@ -16,7 +16,7 @@ const Portfolio = () => {
   const categories = [
     { id: 'all', name: 'All Projects' },
     { id: 'web', name: 'Web Development' },
-    { id: 'mobile', name: 'Mobile Apps' },
+    // { id: 'mobile', name: 'Mobile Apps' },
     { id: 'ai', name: 'AI & ML' },
     { id: 'enterprise', name: 'Enterprise Solutions' },
   ];

@@ -80,64 +80,64 @@ const Home = () => {
 
   {/* Hero Content */}
   <motion.div 
-    className="relative container mx-auto px-4 pt-40 flex flex-col md:flex-row items-center"
-    style={{ y: headerY }}
-  >
-    <div className="md:w-1/2">
-      <motion.h1 
-        className="text-7xl md:text-8xl font-bold mb-8 text-gray-800"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        Transform Your
-        <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Digital Vision
-        </span>
-      </motion.h1>
+      className="relative container mx-auto px-4 pt-40 flex flex-col md:flex-row items-center"
+      style={{ y: headerY }}
+    >
+      <div className="md:w-1/2">
+        <motion.h1 
+          className="text-7xl md:text-8xl font-bold mb-8 text-gray-800"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Transform Your
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            Digital Vision
+          </span>
+        </motion.h1>
 
-      <motion.p
-        className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-12"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-      >
-        We bring your ideas to life through innovative software solutions.
-        Experience excellence in every pixel and line of code.
-      </motion.p>
+        <motion.p
+          className="text-xl md:text-2xl text-gray-600 max-w-2xl mb-12"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          We bring your ideas to life through innovative software solutions.
+          Experience excellence in every pixel and line of code.
+        </motion.p>
 
-      <motion.div
-        className="flex gap-4"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        <motion.div
+          className="flex gap-4"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <button 
+            onClick={() => window.location.href = '/contact'}
+            className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-700 transition-colors"
+          >
+            Get Started
+          </button>
+          <button 
+            onClick={() => window.location.href = '/about'}
+            className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors"
+          >
+            Learn More
+          </button>
+        </motion.div>
+      </div>
+
+      {/* Hero Image */}
+      <motion.div 
+        className="mt-12 md:mt-0 md:w-1/2"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <Link 
-          to="/contact"
-          className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-700 transition-colors"
-        >
-          Get Started
-        </Link>
-        <Link 
-          to="/about"
-          className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-50 transition-colors"
-        >
-          Learn More
-        </Link>
+        <img src={m3} alt="Salesforce Development" className="rounded-lg shadow-lg" />
       </motion.div>
-    </div>
-
-    {/* Hero Image */}
-    <motion.div 
-      className="mt-12 md:mt-0 md:w-1/2"
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.6 }}
-    >
-      <img src={m3} alt="Salesforce Development" className="rounded-lg shadow-lg" />
     </motion.div>
-  </motion.div>
 
   {/* Stats */}
   <motion.div
@@ -245,16 +245,16 @@ const Home = () => {
           </div>
 
           <motion.div 
-            className="text-center mt-12"
-            variants={itemVariants}
-          >
-            <Link
-              to="/portfolio"
-              className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-700 transition-colors inline-block"
-            >
-              View All Projects
-            </Link>
-          </motion.div>
+      className="text-center mt-12"
+      variants={itemVariants}
+    >
+      <button
+        onClick={() => window.location.href = '/portfolio'}
+        className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-blue-700 transition-colors inline-block"
+      >
+        View All Projects
+      </button>
+    </motion.div>
         </div>
       </motion.section>
 

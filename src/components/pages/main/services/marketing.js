@@ -251,39 +251,40 @@ const MarketingServices = () => {
       {/* Packages Section */}
    
       <div className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#003366] mb-12 text-center">Our Packages</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200">
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#003366] mb-2">{pkg.name}</h3>
-                  <p className="text-gray-600 mb-4">{pkg.description}</p>
-                  <p className="text-2xl font-bold text-[#003366] mb-6">{pkg.price}</p>
-                  <ul className="space-y-3 mb-6">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-[#003366] font-semibold">{pkg.bonus}</p>
-                  </div>
-                </div>
-                <div className="p-6 border-t">
-                  <button className="w-full bg-[#003366] text-white py-3 rounded-lg hover:bg-[#002244] transition duration-300">
-                  <Link to="/contact" >
-                    Choose Plan  </Link>
-                  </button>
-                 
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-[#003366] mb-12 text-center">Our Packages</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {packages.map((pkg, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col">
+              <div className="p-6 flex-grow">
+                <h3 className="text-2xl font-bold text-[#003366] mb-2">{pkg.name}</h3>
+                <p className="text-gray-600 mb-4">{pkg.description}</p>
+                <p className="text-2xl font-bold text-[#003366] mb-6">{pkg.price}</p>
+                <ul className="space-y-3 mb-6">
+                  {pkg.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                      <span className="text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="text-[#003366] font-semibold">{pkg.bonus}</p>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="p-6 border-t mt-auto">
+                <button 
+                  onClick={() => window.location.href = '/contact'}
+                  className="w-full bg-[#003366] text-white py-3 px-6 rounded-lg hover:bg-[#002244] transition duration-300 font-medium"
+                >
+                  Choose Plan
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
