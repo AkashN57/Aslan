@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { GiLion } from "react-icons/gi";
+import { FaBook } from "react-icons/fa";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setServicesOpen] = useState(false);
-
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const services = [
     { 
       name: 'Web Development',
@@ -47,14 +52,24 @@ const Header = () => {
       icon: '💹',
     }
   ];
-
+  const handleServiceSelect = (route) => {
+    setDropdownOpen(false);
+    navigate(`/${route}`);
+  };
+  const isActive = (path) => location.pathname === path;
+  const isAcademicServicesPage = location.pathname === '/Student';
+  // Determine the logo name based on the current route
+  const logoName = location.pathname === '/Student' ? 'Assignment' : 'Aslan';
+  const logoName2 = location.pathname === '/Student' ? ' Labs' : 'Ai';
+  const LogoIcon = isAcademicServicesPage ? FaBook : GiLion;
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white">
       <nav className="container mx-auto px-4 lg:px-16">
         {/* Desktop Layout */}
         <div className="flex justify-between items-center h-20">
           <a href="/" className="flex items-center space-x-2 text-2xl font-bold text-gray-800">
-            <span>Aslan<span className="text-primary">Ai</span></span>
+          <LogoIcon className="text-primary" />
+          <span>{logoName}<span className="text-primary">{logoName2}</span></span>
           </a>
 
           <button
