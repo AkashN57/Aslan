@@ -48,7 +48,7 @@ const jobs = [
     location: "Remote",
     type: "Part-Time",
     posted: "2 weeks ago",
-    description: "Lead product development and strategy.",
+    description: "Develop backend using Node js.",
   },
   {
     id: 4,

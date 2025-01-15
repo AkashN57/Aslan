@@ -70,7 +70,50 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
-            {/* Desktop menu items... */}
+            <a href="/" className="text-gray-600 hover:text-primary">
+              Home
+            </a>
+            
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <button
+                className="flex items-center space-x-1 text-gray-600 hover:text-primary"
+              >
+                <span>Services</span>
+                <ChevronDown className="w-5 h-5" />
+              </button>
+
+              {/* Services Dropdown Menu */}
+              <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 mt-2 hidden group-hover:block">
+                {services.map((service) => (
+                  <a
+                    key={service.route}
+                    href={`/${service.route}`}
+                    className="flex items-center px-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50"
+                  >
+                    <span className="mr-3">{service.icon}</span>
+                    {service.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <a href="/about" className="text-gray-600 hover:text-primary">
+              About
+            </a>
+            <a href="/portfolio" className="text-gray-600 hover:text-primary">
+              Portfolio
+            </a>
+            <a href="/careers" className="text-gray-600 hover:text-primary">
+              Careers
+            </a>
+            
+            <a
+              href="/contact"
+              className="py-2 px-6 text-white bg-primary hover:bg-primary-dark rounded-lg transition-colors font-medium"
+            >
+              Let's Talk
+            </a>
           </div>
         </div>
 
